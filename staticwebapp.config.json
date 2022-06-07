@@ -1,0 +1,11 @@
+{
+  "platform": {
+    "apiRuntime": "node:16"
+  },
+  "routes": [
+    {
+      "route": "/about",
+      "rewrite": "/api/remix-server"
+    }
+  ]
+}
