@@ -1,9 +1,10 @@
 {
-  "name": "remix-azure-server",
+  "name": "remix-server-azure",
   "version": "0.0.1-alpha.0",
   "description": "A Remix server adapter for Azure Functions",
   "author": "Jeff Emery",
   "scripts": {
+    "build": "tsc",
     "build:api": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",

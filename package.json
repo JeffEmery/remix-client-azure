@@ -1,4 +1,8 @@
 {
+  "name": "remix-client-azure",
+  "version": "0.0.1-alpha.0",
+  "description": "A Remix client on Azure Static Web Apps",
+  "author": "Jeff Emery",
   "private": true,
   "sideEffects": false,
   "scripts": {
