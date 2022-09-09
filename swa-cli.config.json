@@ -2,15 +2,20 @@
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
     "remix-client-azure": {
-      "appLocation": ".",
-      "apiLocation": "api",
-      "outputLocation": "public\\build",
-      "appBuildCommand": "npm run build:app",
-      "apiBuildCommand": "npm run build:api --if-present",
-      "run": "npm run dev",
-      "appDevserverUrl": "http://localhost:3000",
       "appName": "remix-client",
-      "resourceGroupName": "remix-app-rg"
+      "appLocation": ".",
+      "appBuildCommand": "npm run build:app",
+      "appDevserverUrl": "http://localhost:3000",
+
+      "apiLocation": "api",
+      "apiBuildCommand": "npm run build:api --if-present",
+
+      "outputLocation": "public\\build",
+
+      "run": "npm run dev",
+
+      "resourceGroupName": "remix-app-rg",
+      "env": "preview"
     }
   }
 }

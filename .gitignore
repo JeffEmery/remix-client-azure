@@ -1,6 +1,7 @@
 node_modules
 
 /.cache
+.clip
 /api/build
 /public/build
 .env

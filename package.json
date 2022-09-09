@@ -7,9 +7,12 @@
   "sideEffects": false,
   "scripts": {
     "build": "swa build",
+    "echo": "set HELLO=\"World\"&& echo $HELLO",
     "build:app": "remix build",
     "dev": "remix dev",
-    "start": "swa start"
+    "start": "swa start",
+    "deploy": "swa deploy",
+    "deploy:prod": "swa deploy --env Production"
   },
   "dependencies": {
     "@remix-run/node": "^1.5.1",

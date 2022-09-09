@@ -4,8 +4,17 @@
   },
   "routes": [
     {
-      "route": "/about",
-      "rewrite": "/api/remix-server"
+      "route": "/"
+    },
+    {
+      "route": "/favicon.ico"
+    },
+    {
+      "route": "/build/*"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/api/request-handler"
     }
   ]
 }
