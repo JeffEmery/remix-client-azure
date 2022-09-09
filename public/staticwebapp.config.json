@@ -4,9 +4,6 @@
   },
   "routes": [
     {
-      "route": "/"
-    },
-    {
       "route": "/favicon.ico"
     },
     {

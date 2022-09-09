@@ -116,9 +116,9 @@ property defines the function entry point.
 ## Routing
 
 Azure Static Web Apps handle route requests by rewriting URLs to Azure Function
-API. Static assets must have a route defined in `staticwebapp.config.json`. A
-wildcard route maps the rest of the application routes through the Azure
-Function API.
+API. Static assets must have a route defined in
+`./public/staticwebapp.config.json`. A wildcard route maps the rest of the
+application routes through the Azure Function API.
 
 ```json
   "routes": [
