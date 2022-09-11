@@ -248,4 +248,4 @@ responses.
 The [Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/) for
 development.
 
-## ~_fin_~
+### _\~fin\~_
