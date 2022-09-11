@@ -11,7 +11,7 @@ to host the
 handles server requests and responses. The Azure Function is implemented with
 the
 [Remix Server Adapter for Azure Functions](https://www.npmjs.com/package/remix-azure)
-package, which maps the Azure Function to the browser's
+package which maps the Azure Function to the browser's
 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ## Overview
@@ -19,7 +19,7 @@ package, which maps the Azure Function to the browser's
 The server code in `./api/request-handler/index.ts` imports the
 [Remix Server Adapter for Azure Functions](https://www.npmjs.com/package/remix-azure)
 and exports the `handler` that is built by _requiring_ the Remix Application
-server code previously compiled into `./api/build`.
+server code compiled into `./api/build`.
 
 ## Building the Remix Server for the Azure Function
 
@@ -70,8 +70,8 @@ The `./api/package.json` file defines the build packages and script.
 ```
 
 `api/request-handler/index.ts` is the source for the Remix Server Azure
-Function. The Remix application code is _required_ into the Remix Server
-handler. The Remix Server handler is provided by
+Function. The Remix application code from `./api/build/index.js` is _required_
+into the Remix Server handler. The Remix Server handler is provided by
 [Remix Server Adapter for Azure Functions](https://www.npmjs.com/package/remix-azure).
 The `tsconfig.json` file sets the output directory to `./api/dist`.
 
@@ -91,7 +91,7 @@ The `tsconfig.json` file sets the output directory to `./api/dist`.
 The `./api/request-handler/function.json` file configures the Azure Function
 runtime and entry point, When deployed, Azure looks for folders with a
 `function.json` file and uses it to publish the function. The `scriptFile`
-property defines the function entry point.
+property defines the function entry point `../dist/request-handler/index.js`.
 
 ```json
 {
@@ -115,16 +115,13 @@ property defines the function entry point.
 
 ## Routing
 
-Azure Static Web Apps handle route requests by rewriting URLs to Azure Function
-API. Static assets must have a route defined in
-`./public/staticwebapp.config.json`. A wildcard route maps the rest of the
-application routes through the Azure Function API.
+Azure Static Web Apps handle routes by rewriting URLs to the Azure Function API.
+Static assets have a route defined in `./public/staticwebapp.config.json`. A
+wildcard route maps the rest of the application routes through the Azure
+Function API.
 
 ```json
   "routes": [
-    {
-      "route": "/"
-    },
     {
       "route": "/favicon.ico"
     },
@@ -170,12 +167,13 @@ and running the emulator.
 
 ### swa build
 
-Running `swa build` will perform the build steps defined in
-`/swa-cli.config.json`. The first step is to build the Remix application which
-is done by running `npm run build:app` defined by `appBuildCommand`. The static
-assets are built into `./public/build`. The server components are built into
-`./api/build/index.js`. The second step is to build the API from the `./api`
-directory.
+Running `swa build` performs the build steps defined in `/swa-cli.config.json`.
+The first step [builds the Remix application](#build-the-remix-server-code) with
+`npm run build:app` defined by `appBuildCommand`. Static assets are built into
+`./public/build`. Server components are built into `./api/build/index.js`. The
+second step
+[builds the Azure Function API](#build-the-remix-server-azure-function) from the
+`./api` directory with `npm run build:api`.
 
 ### swa start
 
@@ -227,3 +225,27 @@ Using configuration "remix-client-azure" from file:
 [swa]
 [swa] Azure Static Web Apps emulator started at http://localhost:4280.
 ```
+
+View the Remix application running in the Azure Static Web Apps emulator from
+http://localhost:4280.
+
+## References
+
+The
+[Remix Server Adapter for Azure Functions package](https://www.npmjs.com/package/remix-azure)
+provides a handler to deploy the Remix server functions to Azure Functions on
+the Node runtime.
+
+[Understanding Remix Server Adapters](https://remix.run/docs/en/v1/other-api/adapter)
+and how
+[Remix runs on the server](https://remix.run/docs/en/v1/pages/technical-explanation#http-handler-and-adapters)
+(The Remix team does not intend to maintain their own Azure Functions adapter.)
+
+[Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node)
+provides the Node server environment to handle route and data requests and
+responses.
+
+The [Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/) for
+development.
+
+## _~fin~_
