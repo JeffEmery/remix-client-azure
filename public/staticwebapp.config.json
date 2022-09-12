@@ -29,5 +29,16 @@
       "route": "/*",
       "rewrite": "/api/request-handler"
     }
-  ]
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/39deb1c1-2c7a-4802-b579-c1cc24d3fd53/v2.0",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
+    }
+  }
 }
