@@ -10,6 +10,22 @@
       "route": "/build/*"
     },
     {
+      "route": "/.auth/login/twitter",
+      "statusCode": 404
+    },
+    {
+      "route": "/.auth/*"
+    },
+    {
+      "route": "/login",
+      "redirect": "/.auth/login/aad"
+    },
+    {
+      "route": "/profile",
+      "rewrite": "/api/request-handler",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/*",
       "rewrite": "/api/request-handler"
     }
