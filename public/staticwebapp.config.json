@@ -18,7 +18,19 @@
     },
     {
       "route": "/login",
-      "redirect": "/.auth/login/aad"
+      "redirect": "/.auth/login/aad?post_login_redirect_uri=http://localhost:4280/profile"
+    },
+    {
+      "route": "/logout",
+      "redirect": "/.auth/logout/aad"
+    },
+    {
+      "route": "/purge",
+      "redirect": "/.auth/purge/aad"
+    },
+    {
+      "route": "/identity",
+      "redirect": "/.auth/me"
     },
     {
       "route": "/profile",
