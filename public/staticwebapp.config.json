@@ -18,7 +18,7 @@
     },
     {
       "route": "/login",
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=https://green-river-0f8b1ea1e-preview.westus2.1.azurestaticapps.net/profile"
+      "redirect": "/.auth/login/aad?post_login_redirect_uri=https://gray-glacier-09455e810.1.azurestaticapps.net/profile"
     },
     {
       "route": "/logout",
