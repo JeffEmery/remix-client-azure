@@ -18,7 +18,7 @@
     },
     {
       "route": "/login",
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=https://gray-glacier-09455e810.1.azurestaticapps.net/profile"
+      "redirect": "/.auth/login/aadb2c"
     },
     {
       "route": "/logout",
@@ -26,7 +26,7 @@
     },
     {
       "route": "/purge",
-      "redirect": "/.auth/purge/aad"
+      "redirect": "/.auth/purge/aadb2c"
     },
     {
       "route": "/identity",
@@ -44,11 +44,22 @@
   ],
   "auth": {
     "identityProviders": {
-      "azureActiveDirectory": {
-        "registration": {
-          "openIdIssuer": "https://login.microsoftonline.com/39deb1c1-2c7a-4802-b579-c1cc24d3fd53/v2.0",
-          "clientIdSettingName": "AZURE_CLIENT_ID",
-          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+      "customOpenIdConnectProviders": {
+        "aadb2c": {
+          "registration": {
+            "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
+            "clientCredential": {
+              "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://envisionpartner.b2clogin.com/envisionpartner.onmicrosoft.com/B2C_1_swa_signupsignin/v2.0/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "scopes": [],
+            "loginParameterNames": []
+          }
         }
       }
     }
