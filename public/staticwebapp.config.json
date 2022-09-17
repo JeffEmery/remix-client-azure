@@ -7,6 +7,12 @@
       "route": "/favicon.ico"
     },
     {
+      "route": "/privacy.html"
+    },
+    {
+      "route": "/terms.html"
+    },
+    {
       "route": "/build/*"
     },
     {
