@@ -16,10 +16,6 @@
       "route": "/build/*"
     },
     {
-      "route": "/.auth/login/twitter",
-      "statusCode": 404
-    },
-    {
       "route": "/.auth/*"
     },
     {
@@ -58,14 +54,15 @@
               "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
             },
             "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://envisionpartner.b2clogin.com/envisionpartner.onmicrosoft.com/B2C_1_swa_signupsignin/v2.0/.well-known/openid-configuration"
+              "wellKnownOpenIdConfiguration": "https://envisionpartner.b2clogin.com/envisionpartner.onmicrosoft.com/B2C_1_susi/v2.0/.well-known/openid-configuration"
             }
           },
           "login": {
             "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
             "scopes": ["openid", "email", "profile", "phone"],
-            "loginParameterNames": []
-          }
+            "loginParameterNames": ["ui_locales=en-us"]
+          },
+          "enabled": true
         }
       }
     }
