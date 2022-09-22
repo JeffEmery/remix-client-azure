@@ -13,6 +13,9 @@
       "route": "/terms.html"
     },
     {
+      "route": "/.well-known/microsoft-identity-association.json"
+    },
+    {
       "route": "/build/*"
     },
     {
