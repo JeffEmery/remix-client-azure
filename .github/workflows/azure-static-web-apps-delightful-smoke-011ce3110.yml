@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-      - name: Build and Deploy Remix App
+      - name: Build & Deploy Remix App
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -42,9 +42,11 @@ jobs:
           api_build_command: "npm run build:api --if-present"
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      #- name: Build Remix Server Function
-      #  id: remixserver
-
+      - name: Build Remix Server Function
+        id: remixserver
+        run: |
+          pushd './api'
+          npm install
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
