@@ -42,8 +42,8 @@ jobs:
           api_build_command: "npm run build:api --if-present"
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - name: Build Remix Server Function
-        id: remixserver
+      #- name: Build Remix Server Function
+      #  id: remixserver
 
 
   close_pull_request_job:
