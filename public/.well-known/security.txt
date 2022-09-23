@@ -1,5 +1,4 @@
-# If you would like to report a security issue
-# you may report it here.
-Contact:
-Encryption:
-Acknowledgements: 
+Contact: mailto:security@envisionradiology.com
+Expires: 2025-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://sandbox.careris.com/.well-known/security.txt
