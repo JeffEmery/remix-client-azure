@@ -16,6 +16,12 @@
       "route": "/.well-known/microsoft-identity-association.json"
     },
     {
+      "route": "/.well-known/security.txt"
+    },
+    {
+      "route": "/corporate/publickey.txt"
+    },
+    {
       "route": "/build/*"
     },
     {
