@@ -2,7 +2,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Welcome to Remix</h1>
-      <h2>Test pull-request workflow action</h2>
+      <h2>Verify commits</h2>
       <p>
         <a href="/about">About Route</a>
       </p>
